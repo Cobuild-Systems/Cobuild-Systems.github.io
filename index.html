@@ -326,7 +326,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <div class="card card-plain">
-            <form id="contact-form" method="post" action="7b53b1c969adc3126da80fb8bc59d0b2" autocomplete="off">
+            <form id="contact-form" method="post" action="https://formsubmit.co/7b53b1c969adc3126da80fb8bc59d0b2" autocomplete="off">
               <!-- FormSubmit configuration -->
               <input type="hidden" name="_subject" value="Cobuild Systems contact form" />
               <input type="hidden" name="_next" value="/?contact=success#contact" />
@@ -490,7 +490,7 @@
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
       }
 
-      form.addEventListener('submit', function (e) {
+      form.addEventListener('submit', async function (e) {
         let ok = true;
 
         if (!nameEl.value.trim()) {
@@ -514,12 +514,41 @@
           clearError(msgEl);
         }
 
+        e.preventDefault();
+        e.stopPropagation();
         if (!ok) {
-          e.preventDefault();
-          e.stopPropagation();
           const first = document.querySelector('#contact .is-invalid');
           if (first) first.focus();
+          return;
         }
+
+        // Try AJAX submit first to avoid cross-origin navigation
+        const payload = {
+          name: nameEl.value.trim(),
+          email: emailEl.value.trim(),
+          message: msgEl.value.trim(),
+          _subject: 'Cobuild Systems contact form'
+        };
+        const endpoint = 'https://formsubmit.co/ajax/7b53b1c969adc3126da80fb8bc59d0b2';
+        try {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (res.ok) {
+            const banner = document.getElementById('contact-success');
+            if (banner) banner.classList.remove('d-none');
+            form.reset();
+            [nameEl, emailEl, msgEl].forEach(clearError);
+            return;
+          }
+        } catch (err) {
+          // fall through to native submit
+        }
+
+        // Fallback to native form submission (will redirect)
+        form.submit();
       });
 
       [nameEl, emailEl, msgEl].forEach((el) => {
