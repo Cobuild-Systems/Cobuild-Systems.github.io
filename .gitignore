@@ -16,3 +16,16 @@ _site/
 # counterproductive to check this file into the repository.
 # Details at https://github.com/github/pages-gem/issues/768
 Gemfile.lock
+
+# Node dependencies
+node_modules/
+
+# Optional: ignore build output if it’s generated
+dist/
+
+# Optional: if you create a custom build folder for deployment
+build/
+
+# OS/editor cruft
+.DS_Store
+*.log
