@@ -1,10 +1,14 @@
 {
   "dependencies": {
     "@tailwindcss/cli": "^4.1.13",
+    "soft-ui-design-system": "^1.0.4",
     "tailwindcss": "^4.1.13"
   },
   "scripts": {
     "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+  },
+  "devDependencies": {
+    "daisyui": "^5.1.12"
   }
 }

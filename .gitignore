@@ -26,6 +26,9 @@ dist/
 # Optional: if you create a custom build folder for deployment
 build/
 
+# Ignore local assets; copied from node_modules at deploy time
+assets/
+
 # OS/editor cruft
 .DS_Store
 *.log

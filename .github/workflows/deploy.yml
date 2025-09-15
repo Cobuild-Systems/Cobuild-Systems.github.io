@@ -32,12 +32,18 @@ jobs:
       - name: Build Tailwind
         run: npm run build
 
+      - name: Prepare assets from node_modules
+        run: |
+          mkdir -p build/assets
+          cp -R node_modules/soft-ui-design-system/assets/* build/assets/
+
       - name: Prepare static site
         run: |
           mkdir -p build
           cp -r index.html dist build/
           # Keep dist/ in place so the CSS link works:
           #   <link rel="stylesheet" href="./dist/output.css" />
+          # assets/ is already added from node_modules in the previous step
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
