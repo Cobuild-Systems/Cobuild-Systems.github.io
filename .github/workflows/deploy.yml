@@ -36,6 +36,8 @@ jobs:
         run: |
           mkdir -p build/assets
           cp -R node_modules/soft-ui-design-system/assets/* build/assets/
+          # Overlay any repo-provided assets (e.g., custom images)
+          if [ -d assets ]; then cp -R assets/* build/assets/; fi
 
       - name: Prepare static site
         run: |

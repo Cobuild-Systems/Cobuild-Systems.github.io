@@ -27,7 +27,10 @@ dist/
 build/
 
 # Ignore local assets; copied from node_modules at deploy time
-assets/
+# But keep specific custom files we add
+assets/*
+!assets/img/
+!assets/img/**
 
 # OS/editor cruft
 .DS_Store
