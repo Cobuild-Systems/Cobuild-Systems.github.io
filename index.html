@@ -41,10 +41,7 @@
       <a href="#solutions"
         class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">solutions</a>
 
-      <a href="#"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">about</a>
-
-      <a href="#"
+      <a href="#contact"
         class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">contact</a>
 
     </div>
@@ -62,8 +59,8 @@
             <h1 class="mb-4">Unlock your mainframe</h1>
             <p class="lead pe-5 me-5">Your mainframe holds decades of answers. Cobuild helps you find them. </p>
             <div class="buttons">
-              <button type="button" class="btn btn-primary mt-4">Get Started</button>
-              <button type="button" class="btn text-primary shadow-none mt-4">Read more</button>
+              <a href="#contact" class="btn btn-primary mt-4" role="button">Get Started</a>
+              <a href="#features" class="btn text-primary shadow-none mt-4" role="button">Read more</a>
             </div>
           </div>
         </div>
@@ -209,7 +206,7 @@
                 required on the
                 mainframe.
               </p>
-              <a href="javascript:;" class="text-primary icon-move-right">More about us
+              <a href="#solutions" class="text-primary icon-move-right">Explore solutions
                 <i class="fas fa-arrow-right text-xs ms-1"></i>
               </a>
             </div>
@@ -219,11 +216,13 @@
     </div>
   </section>
   <section class="bg-white dark:bg-gray-900 position-relative overflow-hidden" id="solutions">
-    <div aria-hidden="true" class="position-absolute top-0 start-0 w-100 h-100" style="background-image:url('./assets/img/curved-images/curved-10.jpg');background-size:cover;background-position:center;opacity:0.2;"></div>
+    <div aria-hidden="true" class="position-absolute top-0 start-0 w-100 h-100"
+      style="background-image:url('./assets/img/curved-images/curved-10.jpg');background-size:cover;background-position:center;opacity:0.2;">
+    </div>
     <div class="container py-6 position-relative z-index-1">
       <div class="row mb-5 text-center">
         <div class="col-12">
-          <h2 class="mb-2 text-gradient text-primary" >Solutions</h2>
+          <h2 class="mb-2 text-gradient text-primary">Solutions</h2>
           <p class="lead mx-auto text-gray-700 dark:text-gray-300" style="max-width: 720px;">
             AI for your mainframe—on-prem or in the cloud, entirely on your terms.
           </p>
@@ -272,9 +271,13 @@
                 Ready-to-use apps on Nexus that give teams instant value:
               </p>
               <ul class="text-sm text-secondary ps-3 mb-0" style="list-style: disc;">
-                <li><strong>Cobuild Insight</strong>: a chat agent that leverages Nexus to answer questions about your mainframe code and data.</li>
-                <li><strong>Cobuild Code Assist</strong>: deep code understanding to perform reviews and make fully-featured changes
+                <li><strong>Cobuild Insight</strong>: a chat agent that leverages Nexus to answer questions about your
+                  mainframe code and data.</li>
+                <li><strong>Cobuild Code Assist</strong>: deep code understanding to perform reviews and make
+                  fully-featured changes
                   directly inside VSCode or terminal emulators, with full mainframe context.
+                </li>
+                <li><strong>Cobuild RCA</strong>: understand root-causes fast with Cobuild's AI mainframe expertise.
                 </li>
               </ul>
             </div>
@@ -299,6 +302,65 @@
                 servers, while keeping full control of your data.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" id="contact">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 mx-auto text-center">
+          <div class="ms-3 mb-md-5">
+            <h3>Contact us</h3>
+            <p>
+              We'd love to connect with you.
+            </p>
+            <div id="contact-success" class="alert alert-success d-none" role="alert">
+              Thanks! Your message has been sent.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="card card-plain">
+            <form id="contact-form" method="post" action="https://formsubmit.co/gregory@cobuildsystems.com" autocomplete="off">
+              <!-- FormSubmit configuration -->
+              <input type="hidden" name="_subject" value="Cobuild Systems contact form" />
+              <input type="hidden" name="_next" value="/?contact=success#contact" />
+              <input type="hidden" name="_captcha" value="false" />
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Full Name</label>
+                    <div class="input-group mb-4">
+                      <input id="contact-name" class="form-control" name="name" placeholder="Full Name" aria-label="Full Name" type="text" required>
+                    </div>
+                    <div class="invalid-feedback"></div>
+                  </div>
+                  <div class="col-md-6 ps-md-2">
+                    <label>Email</label>
+                    <div class="input-group">
+                      <input id="contact-email" type="email" name="email" class="form-control" placeholder="hello@cobuildsystems.com" required>
+                    </div>
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+                <div class="form-group mb-4 mt-md-0 mt-4">
+                  <label>How can we help you?</label>
+                  <textarea id="contact-message" name="message" class="form-control" rows="6"
+                    placeholder="Tell us a bit about your goals and current setup" required></textarea>
+                  <div class="invalid-feedback"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <button type="submit" class="btn bg-gradient-primary mt-4">Send Message</button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -376,6 +438,102 @@
 
       // Initial state
       setActive(pickSectionAtTop());
+    })();
+  </script>
+  <script>
+    // Show contact success banner when redirected back from FormSubmit
+    (function () {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('contact') === 'success') {
+          const el = document.getElementById('contact-success');
+          if (el) el.classList.remove('d-none');
+          params.delete('contact');
+          const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '') + window.location.hash;
+          window.history.replaceState({}, '', newUrl || '/#contact');
+        }
+      } catch (e) { /* no-op */ }
+    })();
+  </script>
+  <script>
+    // Client-side validation for contact form
+    (function () {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+      const nameEl = document.getElementById('contact-name');
+      const emailEl = document.getElementById('contact-email');
+      const msgEl = document.getElementById('contact-message');
+
+      function getFeedbackEl(field) {
+        const ig = field.closest('.input-group');
+        const candidate = ig ? ig.nextElementSibling : field.nextElementSibling;
+        return candidate && candidate.classList && candidate.classList.contains('invalid-feedback') ? candidate : null;
+      }
+
+      function showError(field, message) {
+        const fb = getFeedbackEl(field);
+        if (fb) { fb.textContent = message; fb.classList.add('d-block'); }
+        field.classList.add('is-invalid');
+        field.setAttribute('aria-invalid', 'true');
+      }
+
+      function clearError(field) {
+        const fb = getFeedbackEl(field);
+        if (fb) fb.classList.remove('d-block');
+        field.classList.remove('is-invalid');
+        field.removeAttribute('aria-invalid');
+      }
+
+      function validateEmail(value) {
+        const v = (value || '').trim();
+        if (!v) return false;
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      }
+
+      form.addEventListener('submit', function (e) {
+        let ok = true;
+
+        if (!nameEl.value.trim()) {
+          showError(nameEl, 'Please enter your full name.');
+          ok = false;
+        } else {
+          clearError(nameEl);
+        }
+
+        if (!validateEmail(emailEl.value)) {
+          showError(emailEl, 'Please enter a valid email address.');
+          ok = false;
+        } else {
+          clearError(emailEl);
+        }
+
+        if (!msgEl.value.trim()) {
+          showError(msgEl, 'Please enter a message.');
+          ok = false;
+        } else {
+          clearError(msgEl);
+        }
+
+        if (!ok) {
+          e.preventDefault();
+          e.stopPropagation();
+          const first = document.querySelector('#contact .is-invalid');
+          if (first) first.focus();
+        }
+      });
+
+      [nameEl, emailEl, msgEl].forEach((el) => {
+        if (!el) return;
+        el.addEventListener('input', () => clearError(el));
+        el.addEventListener('blur', () => {
+          // Optional: validate on blur for quicker feedback
+          if (el === emailEl && el.value && !validateEmail(el.value)) {
+            showError(emailEl, 'Please enter a valid email address.');
+          }
+          if (el === nameEl && !el.value.trim()) showError(nameEl, 'Please enter your full name.');
+          if (el === msgEl && !el.value.trim()) showError(msgEl, 'Please enter a message.');
+        });
+      });
     })();
   </script>
 </body>
