@@ -44,6 +44,10 @@ jobs:
           mkdir -p build
           # Copy all top-level HTML pages and the compiled CSS dir
           cp -r *.html dist build/
+          # Include pretty-URL directories (e.g., solutions/ -> /solutions/)
+          if [ -d solutions ]; then cp -R solutions build/; fi
+          # Ensure Jekyll doesn’t interfere with static files
+          if [ -f .nojekyll ]; then cp .nojekyll build/; else touch build/.nojekyll; fi
           # Keep dist/ in place so the CSS link works:
           #   <link rel="stylesheet" href="./dist/output.css" />
           # assets/ is already added from node_modules in the previous step
