@@ -14,6 +14,8 @@
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./dist/output.css" />
   <link type="text/css" href="./assets/css/soft-design-system.min.css" rel="stylesheet">
+  <!-- Ambient layer (after Soft UI to ensure visibility) -->
+  <link rel="stylesheet" href="./assets/css/ambient.css" />
   <style>
     header[id],
     section[id] {
@@ -36,6 +38,12 @@
 </head>
 
 <body class="min-h-screen flex flex-col bg-slate-50">
+  <!-- Ambient blobs overlay (experimental) -->
+  <div class="ambient-blobs" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
   <nav class="bg-white shadow dark:bg-gray-800 sticky top-0 z-50">
     <div
       class="mx-auto max-w-7xl flex items-center justify-between py-2 px-4 text-gray-600 capitalize dark:text-gray-300">
@@ -274,7 +282,7 @@
             </div>
           </div>
         </div>
-        <a href="index.html#contact" class="inline-flex items-center justify-center align-middle rounded-md px-4 py-1.5 text-sm font-semibold text-white bg-gradient-brand mx-1.5 sm:mx-6 shadow-sm">
+        <a href="index.html#contact" class="inline-flex items-center justify-center align-middle rounded-md px-4 py-1.5 text-sm font-semibold text-white bg-gradient-brand mx-1.5 sm:mx-6 shadow-sm transform transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:shadow-md">
           Contact Us
         </a>
       </div>
@@ -292,7 +300,7 @@
         <a href="#apps" class="block hover:text-gray-900 dark:hover:text-white">Pre-built Applications</a>
         <a href="#cloud" class="block hover:text-gray-900 dark:hover:text-white">Cobuild Cloud</a>
       </div>
-      <a href="index.html#contact" class="btn bg-gradient-brand w-full mt-2">Contact Us</a>
+      <a href="index.html#contact" class="btn bg-gradient-brand w-full mt-2 transform transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:shadow-md">Contact Us</a>
     </div>
   </div>
 

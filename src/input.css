@@ -1,1 +1,93 @@
 @import "tailwindcss";
+@source "./**/*.{html,js,ts}";
+
+@layer base {
+  /*
+    Ambient background and optional overlay
+    - Keeps movement extremely subtle and low-contrast
+    - Respects prefers-reduced-motion
+    - Pure CSS, no JS
+  */
+
+  :root {
+    --ambient-base: #f8fafc; /* Tailwind slate-50 */
+    /* Increase visibility slightly so it's noticeable */
+    --ambient-accent-1: rgba(200, 60, 142, 0.12); /* Cobuild magenta tint */
+    --ambient-accent-2: rgba(14, 165, 233, 0.10); /* Sky-500 tint */
+  }
+
+  body {
+    background-color: var(--ambient-base);
+    /* Two very soft radial gradients that slowly drift */
+    background-image:
+      radial-gradient(1200px 800px at 10% 10%, var(--ambient-accent-1), transparent 60%),
+      radial-gradient(900px 600px at 90% 90%, var(--ambient-accent-2), transparent 60%);
+    background-attachment: fixed, fixed;
+    background-size: 200% 200%, 200% 200%;
+    background-position: 0% 0%, 100% 100%;
+    animation: ambient-pan 60s linear infinite alternate;
+  }
+
+  @keyframes ambient-pan {
+    0% { background-position: 0% 0%, 100% 100%; }
+    50% { background-position: 40% 60%, 60% 40%; }
+    100% { background-position: 100% 100%, 0% 0%; }
+  }
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    body { animation: none; }
+  }
+
+  /* Optional: floating blurred blob overlay for extra depth
+     Usage: include a <div class="ambient-blobs"> with 3 children .blob elements */
+  .ambient-blobs {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 49; /* just below nav (z-50) */
+    mix-blend-mode: normal;
+    opacity: 0.45;
+  }
+
+  .ambient-blobs .blob {
+    position: absolute;
+    width: 60vmax;
+    height: 60vmax;
+    border-radius: 50%;
+    filter: blur(30px);
+    will-change: transform;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  .ambient-blobs .b1 { background: rgba(200, 60, 142, 0.35); }
+  .ambient-blobs .b2 { background: rgba(14, 165, 233, 0.30); }
+  .ambient-blobs .b3 { background: rgba(34, 197, 94, 0.28); }
+
+  /* Gentle, asynchronous drifting */
+  .ambient-blobs .b1 { left: -10vmax; top: -5vmax; animation: blob-float-1 90s ease-in-out infinite; }
+  .ambient-blobs .b2 { right: -12vmax; bottom: -8vmax; animation: blob-float-2 100s ease-in-out infinite; }
+  .ambient-blobs .b3 { left: 20vw; bottom: -10vmax; animation: blob-float-3 110s ease-in-out infinite; }
+
+  @keyframes blob-float-1 {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(8vmax, 6vmax, 0) scale(1.05); }
+    100% { transform: translate3d(0, 0, 0) scale(1); }
+  }
+
+  @keyframes blob-float-2 {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(-6vmax, -4vmax, 0) scale(1.08); }
+    100% { transform: translate3d(0, 0, 0) scale(1); }
+  }
+
+  @keyframes blob-float-3 {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(4vmax, -6vmax, 0) scale(1.03); }
+    100% { transform: translate3d(0, 0, 0) scale(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ambient-blobs .blob { animation: none; }
+  }
+}
