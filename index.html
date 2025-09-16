@@ -304,14 +304,15 @@
           </div>
         </div>
 
-        <a href="#contact"
-          class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">contact</a>
+        <a href="#contact" class="inline-flex items-center justify-center align-middle rounded-md px-4 py-1.5 text-sm font-semibold text-white bg-gradient-brand mx-1.5 sm:mx-6 shadow-sm">
+          Contact Us
+        </a>
       </div>
     </div>
   </nav>
 
   <!-- Mobile nav panel -->
-  <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800 shadow border-t border-gray-200 dark:border-gray-700">
+  <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800 shadow border-t border-gray-200 dark:border-gray-700 z-40" style="position: fixed; top: 56px; left: 0; right: 0; max-height: calc(100vh - 56px); overflow-y: auto;">
     <div class="px-4 py-3 space-y-2 text-gray-700 dark:text-gray-200">
       <a href="#home" class="block py-1 hover:text-gray-900 dark:hover:text-white">Home</a>
       <a href="#features" class="block py-1 hover:text-gray-900 dark:hover:text-white">Features</a>
@@ -323,7 +324,7 @@
           <a href="solutions.html#cloud" class="block hover:text-gray-900 dark:hover:text-white">Cobuild Cloud</a>
         </div>
       </div>
-      <a href="#contact" class="block py-1 hover:text-gray-900 dark:hover:text-white">Contact</a>
+      <a href="#contact" class="btn bg-gradient-brand w-full mt-2">Contact Us</a>
     </div>
   </div>
   <header id="home">
@@ -514,7 +515,7 @@
 
       <div class="row g-4">
         <div class="col-md-6 col-lg-4 d-flex">
-          <div class="card shadow-sm w-100">
+          <div class="card shadow-sm w-100 position-relative transform transition-transform duration-200 hover:-translate-y-1">
             <div class="card-body">
               <div class="icon icon-lg mb-3" style="color:#c83c8e">
                 <!-- server / nexus icon -->
@@ -527,6 +528,7 @@
                 </svg>
               </div>
               <h5 class="mb-2">Cobuild Nexus</h5>
+              <a href="solutions.html#nexus" class="stretched-link" aria-label="Cobuild Nexus"></a>
               <p class="mb-0">
                 <strong>Your private AI engine for the mainframe.</strong> Nexus runs securely on-prem, connects to your
                 systems, and lets you choose the
@@ -537,7 +539,7 @@
         </div>
 
         <div class="col-md-6 col-lg-4 d-flex">
-          <div class="card shadow-sm w-100">
+          <div class="card shadow-sm w-100 position-relative transform transition-transform duration-200 hover:-translate-y-1">
             <div class="card-body">
               <div class="icon icon-lg mb-3" style="color:#c83c8e">
                 <!-- apps / components icon -->
@@ -550,6 +552,7 @@
                 </svg>
               </div>
               <h5 class="mb-2">Pre‑built Applications</h5>
+              <a href="solutions.html#apps" class="stretched-link" aria-label="Pre-built Applications"></a>
               <p class="mb-1">
                 Ready-to-use apps on Nexus that give teams instant value:
               </p>
@@ -568,7 +571,7 @@
         </div>
 
         <div class="col-md-6 col-lg-4 d-flex">
-          <div class="card shadow-sm w-100">
+          <div class="card shadow-sm w-100 position-relative transform transition-transform duration-200 hover:-translate-y-1">
             <div class="card-body">
               <div class="icon icon-lg mb-3" style="color:#c83c8e">
                 <!-- cloud icon -->
@@ -580,6 +583,7 @@
                 </svg>
               </div>
               <h5 class="mb-2">Cobuild Cloud</h5>
+              <a href="solutions.html#cloud" class="stretched-link" aria-label="Cobuild Cloud"></a>
               <p class="mb-0">
                 <strong>All the power of Nexus, hosted for you.</strong> Get up and running fast without managing
                 servers, while keeping full control of your data.
@@ -696,6 +700,22 @@
       const btn = document.getElementById('nav-toggle');
       const panel = document.getElementById('mobile-menu');
       if (!btn || !panel) return;
+
+      // Ensure the panel is fixed under the sticky navbar at any scroll position
+      const navEl = btn.closest('nav');
+      function positionPanel() {
+        const h = navEl ? navEl.offsetHeight : 56; // fallback if not measurable
+        panel.style.position = 'fixed';
+        panel.style.top = h + 'px';
+        panel.style.left = '0';
+        panel.style.right = '0';
+        panel.style.maxHeight = `calc(100vh - ${h}px)`;
+        panel.style.overflowY = 'auto';
+        panel.style.zIndex = '40';
+      }
+      positionPanel();
+      window.addEventListener('resize', positionPanel);
+      window.addEventListener('load', positionPanel);
 
       const close = () => {
         if (!panel.classList.contains('hidden')) panel.classList.add('hidden');
