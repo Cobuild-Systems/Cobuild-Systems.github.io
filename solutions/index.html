@@ -5,30 +5,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <title>Cobuild Systems</title>
+  <title>Solutions – Cobuild Systems</title>
 
-  <link rel="icon" type="image/svg+xml" href="./assets/img/logos/cobuild-systems-logo-small.svg" />
+  <link rel="icon" type="image/svg+xml" href="../assets/img/logos/cobuild-systems-logo-small.svg" />
 
-  <!-- Fonts from creative-tim -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-
-  <!-- Icons from creative-tim -->
-  <link href="./assets/css/nucleo-icons.css" rel="stylesheet">
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-
-  <!-- Tailwind CSS (utilities, site-specific) -->
-  <link rel="stylesheet" href="./dist/output.css" />
-
-  <!-- Soft UI Design System (after Tailwind to avoid conflicts) -->
-  <link type="text/css" href="./assets/css/soft-design-system.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../dist/output.css" />
+  <link type="text/css" href="../assets/css/soft-design-system.min.css" rel="stylesheet">
+  <!-- Ambient layer (after Soft UI to ensure visibility) -->
+  <link rel="stylesheet" href="../assets/css/ambient.css" />
   <style>
-    /* Ensure anchor jumps account for sticky nav height */
     header[id],
     section[id] {
       scroll-margin-top: 120px;
     }
 
-    /* Brand accents for Cobuild (#c83c8e) */
     .text-gradient-brand {
       background-image: linear-gradient(310deg, #c83c8e, #a12d75);
       -webkit-background-clip: text;
@@ -41,38 +34,22 @@
       background-image: linear-gradient(310deg, #c83c8e, #a12d75);
       color: #fff !important;
     }
-
-    /* Contact section theming */
-    #contact .form-control:focus {
-      border-color: #c83c8e;
-      box-shadow: 0 0 0 2px rgba(200, 60, 142, 0.15);
-    }
-
-    .alert-brand {
-      background: rgba(200, 60, 142, 0.08);
-      border: 1px solid rgba(200, 60, 142, 0.3);
-      color: #7c245a;
-    }
-
-    /* Mobile: show a very light hero background image */
-    @media (max-width: 767.98px) {
-      .hero-mobile-bg {
-        background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('./assets/img/curved-images/curved11.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-    }
   </style>
 </head>
 
 <body class="min-h-screen flex flex-col bg-slate-50">
+  <!-- Ambient blobs overlay (experimental) -->
+  <div class="ambient-blobs" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
   <nav class="bg-white shadow dark:bg-gray-800 sticky top-0 z-50">
     <div
       class="mx-auto max-w-7xl flex items-center justify-between py-2 px-4 text-gray-600 capitalize dark:text-gray-300">
-      <a href="#home" class="flex items-center gap-3">
+      <a href="/#home" class="flex items-center gap-3">
         <span class="block md:hidden">
-          <img src="./assets/img/logos/cobuild-systems-logo-small.svg" alt="Cobuild Systems" class="h-10 w-auto" />
+          <img src="../assets/img/logos/cobuild-systems-logo-small.svg" alt="Cobuild Systems" class="h-10 w-auto" />
           <svg class="h-20 w-auto hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             zoomAndPan="magnify" viewBox="0 0 375 374.999991" preserveAspectRatio="xMidYMid meet" version="1.0">
             <defs>
@@ -274,37 +251,38 @@
 
       <!-- Desktop nav -->
       <div class="hidden md:flex items-center">
-        <a href="#home"
+        <a href="/#home"
           class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">home</a>
-
-        <a href="#features"
+        <a href="/#features"
           class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">features</a>
-
         <div class="relative mx-1.5 sm:mx-6 flex items-center gap-1">
-          <a href="#solutions"
+          <a href="/#solutions"
             class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500">solutions</a>
           <button id="nav-solutions-btn" aria-label="Open solutions menu" aria-haspopup="true" aria-expanded="false"
             class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
             <svg id="nav-solutions-caret" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-              style="width:18px;height:18px;color:#c83c8e" class="transition-transform duration-200"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M19 9l-7 7-7-7" stroke="#c83c8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              style="width:18px;height:18px;color:#c83c8e" class="transition-transform duration-200" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor">
+              <path d="M19 9l-7 7-7-7" stroke="#c83c8e" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
             </svg>
           </button>
           <div id="nav-solutions-menu"
             class="absolute right-0 top-full mt-2 w-64 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 hidden z-50">
             <div class="py-2">
-              <a href="/solutions/#nexus"
-                class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Cobuild Nexus</a>
-              <a href="/solutions/#apps"
-                class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Pre-built Applications</a>
-              <a href="/solutions/#cloud"
-                class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Cobuild Cloud</a>
+              <a href="#nexus"
+                class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Cobuild
+                Nexus</a>
+              <a href="#apps"
+                class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Pre-built
+                Applications</a>
+              <a href="#cloud"
+                class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Cobuild
+                Cloud</a>
             </div>
           </div>
         </div>
-
-        <a href="#contact" class="inline-flex items-center justify-center align-middle rounded-md px-4 py-1.5 text-sm font-semibold text-white bg-gradient-brand mx-1.5 sm:mx-6 shadow-sm transform transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:shadow-md">
+        <a href="/#contact" class="inline-flex items-center justify-center align-middle rounded-md px-4 py-1.5 text-sm font-semibold text-white bg-gradient-brand mx-1.5 sm:mx-6 shadow-sm transform transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:shadow-md">
           Contact Us
         </a>
       </div>
@@ -314,348 +292,140 @@
   <!-- Mobile nav panel -->
   <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800 shadow border-t border-gray-200 dark:border-gray-700 z-40" style="position: fixed; top: 56px; left: 0; right: 0; max-height: calc(100vh - 56px); overflow-y: auto;">
     <div class="px-4 py-3 space-y-2 text-gray-700 dark:text-gray-200">
-      <a href="#home" class="block py-1 hover:text-gray-900 dark:hover:text-white">Home</a>
-      <a href="#features" class="block py-1 hover:text-gray-900 dark:hover:text-white">Features</a>
-      <div class="pt-1">
-        <a href="#solutions" class="block py-1 hover:text-gray-900 dark:hover:text-white">Solutions</a>
-        <div class="ml-4 mt-1 space-y-1 text-sm">
-          <a href="/solutions/#nexus" class="block hover:text-gray-900 dark:hover:text-white">Cobuild Nexus</a>
-          <a href="/solutions/#apps" class="block hover:text-gray-900 dark:hover:text-white">Pre-built Applications</a>
-          <a href="/solutions/#cloud" class="block hover:text-gray-900 dark:hover:text-white">Cobuild Cloud</a>
-        </div>
+      <a href="/#home" class="block py-1 hover:text-gray-900 dark:hover:text-white">Home</a>
+      <a href="/#features" class="block py-1 hover:text-gray-900 dark:hover:text-white">Features</a>
+      <a href="/#solutions" class="block py-1 hover:text-gray-900 dark:hover:text-white">Solutions (Overview)</a>
+      <div class="ml-0 mt-1 space-y-1 text-sm">
+        <a href="#nexus" class="block hover:text-gray-900 dark:hover:text-white">Cobuild Nexus</a>
+        <a href="#apps" class="block hover:text-gray-900 dark:hover:text-white">Pre-built Applications</a>
+        <a href="#cloud" class="block hover:text-gray-900 dark:hover:text-white">Cobuild Cloud</a>
       </div>
-      <a href="#contact" class="btn bg-gradient-brand w-full mt-2 transform transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:shadow-md">Contact Us</a>
+      <a href="/#contact" class="btn bg-gradient-brand w-full mt-2 transform transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:shadow-md">Contact Us</a>
     </div>
   </div>
-  <header id="home">
-    <div class="page-header min-vh-100 hero-mobile-bg">
-      <div class="oblique position-absolute top-0 h-100 d-md-block d-none">
-        <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6"
-          style="background-image:url(./assets/img/curved-images/curved11.jpg)"></div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-7 d-flex justify-content-center flex-column">
-            <h1 class="text-gradient text-primary">Cobuild Systems</h1>
-            <h1 class="mb-4">Unlock your mainframe</h1>
-            <p class="lead pe-5 me-5">Your mainframe holds decades of answers. Cobuild helps you find them. </p>
-            <div class="buttons">
-              <a href="#contact" class="btn btn-primary mt-4" role="button">Get Started</a>
-              <a href="#features" class="btn text-primary shadow-none mt-4" role="button">Read more</a>
-            </div>
-          </div>
+
+  <header id="top" class="bg-white dark:bg-gray-900 position-relative overflow-hidden">
+    <div aria-hidden="true" class="position-absolute top-0 start-0 w-100 h-100"
+      style="background-image:url('../assets/img/curved-images/curved11.jpg');background-size:cover;background-position:center;opacity:0.2;">
+    </div>
+    <div class="container py-6 position-relative z-index-1">
+      <div class="row align-items-center">
+        <div class="col-lg-10 mx-auto text-center">
+          <h1 class="text-gradient text-primary">Solutions</h1>
+          <p class="lead text-gray-700 dark:text-gray-300">Explore Cobuild’s offerings in depth.</p>
         </div>
       </div>
     </div>
   </header>
 
-  <section class="py-5" id="features">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <div class="row justify-content-start">
-            <div class="col-md-6">
-              <div class="info">
-                <div class="icon icon-md mb-3" style="color:#c83c8e">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="currentColor"
-                    stroke-width="0.00048000000000000007">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                      <g id="Layer_2" data-name="Layer 2">
-                        <g id="invisible_box" data-name="invisible box">
-                          <rect width="48" height="48" fill="none"></rect>
-                        </g>
-                        <g id="Layer_6" data-name="Layer 6">
-                          <g>
-                            <path
-                              d="M25.6,25.6,22.2,29,19,25.8l3.4-3.4a2,2,0,0,0-2.8-2.8L16.2,23l-1.3-1.3a1.9,1.9,0,0,0-2.8,0l-3,3a9.8,9.8,0,0,0-3,7,9.1,9.1,0,0,0,1.8,5.6L4.6,40.6a1.9,1.9,0,0,0,0,2.8,1.9,1.9,0,0,0,2.8,0l3.2-3.2a10.1,10.1,0,0,0,5.9,1.9,10.2,10.2,0,0,0,7.1-2.9l3-3a2,2,0,0,0,.6-1.4,1.7,1.7,0,0,0-.6-1.4L25,31.8l3.4-3.4a2,2,0,0,0-2.8-2.8ZM20.8,36.4a6.1,6.1,0,0,1-8.5,0l-.4-.4a6.4,6.4,0,0,1-1.8-4.3,6,6,0,0,1,1.8-4.2l1.6-1.6,8.8,8.9Z">
-                            </path>
-                            <path
-                              d="M43.4,4.6a1.9,1.9,0,0,0-2.8,0L37.2,8a10,10,0,0,0-13,.9l-3,3a2,2,0,0,0-.6,1.4,1.7,1.7,0,0,0,.6,1.4L32.9,26.4a1.9,1.9,0,0,0,2.8,0l3-2.9a9.9,9.9,0,0,0,2.9-7.1A10.4,10.4,0,0,0,40,10.9l3.4-3.5A1.9,1.9,0,0,0,43.4,4.6Zm-7.5,16-1.6,1.6-8.9-8.9L27,11.8a5.9,5.9,0,0,1,8.5,0l.4.3a6.3,6.3,0,0,1,1.7,4.3A5.9,5.9,0,0,1,35.9,20.6Z">
-                            </path>
-                          </g>
-                        </g>
-                      </g>
-                    </g>
-                  </svg>
-                </div>
-                <h5>Fully integrated</h5>
-                <p>Cobuild connects securely to your existing mainframe and dev tools so your team can start asking
-                  questions and getting answers immediately—no rip-and-replace required.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="info">
-                <div class="icon icon-md mb-3">
-                  <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"
-                    fill="#000000">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                      <style type="text/css">
-                        .st0 {
-                          fill: #c83c8e;
-                        }
-                      </style>
-                      <g>
-                        <path class="st0"
-                          d="M449.803,62.197C408.443,20.807,353.85-0.037,299.646-0.006C245.428-0.037,190.85,20.807,149.49,62.197 C108.1,103.557,87.24,158.15,87.303,212.338c-0.047,37.859,10.359,75.766,30.547,109.359L15.021,424.525 c-20.016,20.016-20.016,52.453,0,72.469c20,20.016,52.453,20.016,72.453,0L190.318,394.15 c33.578,20.203,71.5,30.594,109.328,30.547c54.203,0.047,108.797-20.797,150.156-62.188 c41.375-41.359,62.234-95.938,62.188-150.172C512.053,158.15,491.178,103.557,449.803,62.197z M391.818,304.541 c-25.547,25.531-58.672,38.125-92.172,38.188c-33.5-0.063-66.609-12.656-92.188-38.188c-25.531-25.578-38.125-58.688-38.188-92.203 c0.063-33.484,12.656-66.609,38.188-92.172c25.578-25.531,58.688-38.125,92.188-38.188c33.5,0.063,66.625,12.656,92.188,38.188 c25.531,25.563,38.125,58.688,38.188,92.172C429.959,245.854,417.365,278.963,391.818,304.541z">
-                        </path>
-                      </g>
-                    </g>
-                  </svg>
-                </div>
-                <h5>Smart code search</h5>
-                <p>Ask natural-language questions and instantly surface the programs, members, and datasets that
-                  matter—even across
-                  millions of lines of COBOL/JCL.</p>
-              </div>
-            </div>
+  <main class="flex-1">
+    <section id="nexus" class="py-6">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h2 class="text-gradient text-primary mb-3">Cobuild Nexus</h2>
+            <p class="lead mb-3">Your private AI engine for the mainframe</p>
+            <p>Cobuild Nexus is a secure server that connects to your mainframe and brings AI-powered understanding to decades of code.</p>
+            <p>It runs entirely in your environment—on-prem or private cloud—so your data stays under your control.</p>
+            <p>Teams can <strong>extend Nexus through a REST API</strong>, building their own custom clients and integrations, or start right away with the <a href="#apps" class="text-primary">pre‑built Cobuild applications</a> (Insight, Code Assist, RCA) for instant value.</p>
+            <p>Nexus supports <strong>flexible LLM deployment</strong>: you can select and run models based on the compute resources available in your on‑prem environment, or <strong>connect to external LLM providers via API</strong> if you prefer to leverage cloud‑hosted models.</p>
+            <p>With customizable language models and full mainframe context, Nexus makes it easy to search, analyze, and answer questions about your entire codebase—without installing software on the mainframe itself.</p>
           </div>
-          <div class="row justify-content-start mt-4">
-            <div class="col-md-6">
-              <div class="info">
-                <div class="icon icon-md mb-3">
-                  <svg fill="#c83c8e" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#c83c8e">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                      <path
-                        d="M21,11H17.5V3a1,1,0,0,0-1-1h-9a1,1,0,0,0-1,1v8H3a1,1,0,0,0-1,1v9a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V12A1,1,0,0,0,21,11ZM11,20H4V13h7ZM8.5,11V4h7v7ZM20,20H13V13h7Z">
-                      </path>
-                    </g>
-                  </svg>
-                </div>
-                <h5>Pre-built components</h5>
-                <p>Utilize Cobuild's ready-made applications that leverage state-of-the-art AI capabilities, providing
-                  expertise for
-                  your mainframe with minimal required setup.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="info">
-                <div class="icon icon-md mb-3" style="color:#c83c8e">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                      <path
-                        d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                        stroke="#c83c8e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </g>
-                  </svg>
-                </div>
-                <h5>Faster dev cycles</h5>
-                <p>Reduce time spent digging through copybooks or impact reports. Cobuild speeds up debugging,
-                  onboarding, and change
-                  analysis so you can deliver updates with confidence.</p>
-              </div>
-            </div>
+          <div class="col-lg-5 mt-4 mt-lg-0">
+            <img src="../assets/img/cobuild/nexus.png" alt="Cobuild Nexus illustration" class="img-fluid rounded shadow">
           </div>
         </div>
-        <div class="col-lg-4 ms-auto">
-          <div class="card">
-            <img class="card-img-top" src="./assets/img/mainframe.png">
-            <div class="position-relative overflow-hidden" style="height:50px;margin-top:-50px;">
-              <div class="position-absolute w-100 top-0 z-index-1">
-                <svg class="waves waves-sm" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none"
-                  shape-rendering="auto">
-                  <defs>
-                    <path id="card-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
-                    </path>
-                  </defs>
-                  <g class="moving-waves">
-                    <use xlink:href="#card-wave" x="48" y="-1" fill="rgba(255,255,255,0.30"></use>
-                    <use xlink:href="#card-wave" x="48" y="3" fill="rgba(255,255,255,0.35)"></use>
-                    <use xlink:href="#card-wave" x="48" y="5" fill="rgba(255,255,255,0.25)"></use>
-                    <use xlink:href="#card-wave" x="48" y="8" fill="rgba(255,255,255,0.20)"></use>
-                    <use xlink:href="#card-wave" x="48" y="13" fill="rgba(255,255,255,0.15)"></use>
-                    <use xlink:href="#card-wave" x="48" y="16" fill="rgba(255,255,255,0.99)"></use>
-                  </g>
-                </svg>
+      </div>
+    </section>
+
+    <section id="apps" class="py-6 bg-slate-50">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="text-gradient text-primary mb-2">Pre‑built Applications</h2>
+            <p class="text-gray-700 dark:text-gray-300">Ready-to-use apps on Nexus that give teams instant value.</p>
+          </div>
+        </div>
+
+        <!-- Overview image moved below cards and size constrained -->
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Top-left: overview image -->
+          <div class="col-md-6 d-flex justify-content-center align-items-start">
+            <img src="../assets/img/cobuild/prebuilt-apps.png" alt="Cobuild pre‑built applications overview"
+              class="img-fluid d-block" style="max-width: 520px; width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(0,0,0,0.08); box-shadow: none;">
+          </div>
+
+          <!-- Top-right: Insight card -->
+          <div class="col-md-6 d-flex">
+            <div class="card shadow-sm w-100">
+              <div class="card-body d-flex flex-column">
+                <h5 class="mb-1">Cobuild Insight</h5>
+                <p class="text-secondary mb-3">Ask questions. Get answers.</p>
+                <p>Cobuild Insight is a conversational agent powered by Nexus that lets anyone query the entire
+                  mainframe codebase in plain English.</p>
+                <p class="mb-0">Whether you need to trace a field across programs, uncover hidden dependencies, or
+                  understand a business rule written decades ago, Insight returns clear, context-rich explanations drawn
+                  directly from your live systems.</p>
               </div>
             </div>
-            <div class="card-body">
-              <h4 class="text-gradient text-primary">
-                Your AI mainframe expert
-              </h4>
-              <p>
-                Leverage AI-enabled mainframe expertise in your mainframe development environment-with no installation
-                required on the
-                mainframe.
-              </p>
-              <a href="/solutions/" class="text-primary icon-move-right">Explore solutions
-                <i class="fas fa-arrow-right text-xs ms-1"></i>
-              </a>
+          </div>
+
+          <!-- Bottom-left: Code Assist card -->
+          <div class="col-md-6 d-flex">
+            <div class="card shadow-sm w-100">
+              <div class="card-body d-flex flex-column">
+                <h5 class="mb-1">Cobuild Code Assist</h5>
+                <p class="text-secondary mb-3">Deep code understanding inside your IDE.</p>
+                <p>Code Assist brings Nexus intelligence into the tools developers already use—VS Code, terminal
+                  emulators, and more.</p>
+                <p class="mb-0">It can explain unfamiliar modules, surface cross-program impacts, suggest changes, and
+                  even help craft fully-featured edits, all with full awareness of the mainframe environment and its
+                  data flows.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom-right: RCA card -->
+          <div class="col-md-6 d-flex">
+            <div class="card shadow-sm w-100">
+              <div class="card-body d-flex flex-column">
+                <h5 class="mb-1">Cobuild RCA (Root Cause Analysis)</h5>
+                <p class="text-secondary mb-3">Find problems fast.</p>
+                <p>When something breaks, Cobuild RCA pinpoints the source.</p>
+                <p class="mb-0">It analyzes logs, job runs, and code relationships to quickly identify likely causes of
+                  errors or performance issues, giving teams actionable insights to resolve incidents before they ripple
+                  through production.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="bg-white dark:bg-gray-900 position-relative overflow-hidden" id="solutions">
-    <div aria-hidden="true" class="position-absolute top-0 start-0 w-100 h-100"
-      style="background-image:url('./assets/img/curved-images/curved-10.jpg');background-size:cover;background-position:center;opacity:0.2;">
-    </div>
-    <div class="container py-6 position-relative z-index-1">
-      <div class="row mb-5 text-center">
-        <div class="col-12">
-          <h2 class="mb-2 text-gradient text-primary">Solutions</h2>
-          <p class="lead mx-auto text-gray-700 dark:text-gray-300" style="max-width: 720px;">
-            AI for your mainframe—on-prem or in the cloud, entirely on your terms.
-          </p>
-          <a href="/solutions/" class="text-primary icon-move-right d-inline-block mt-2">Discover Cobuild solutions
-            <i class="fas fa-arrow-right text-xs ms-1"></i>
-          </a>
-        </div>
-      </div>
+    </section>
 
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4 d-flex">
-          <div class="card shadow-sm w-100 position-relative transform transition-transform duration-200 hover:-translate-y-1">
-            <div class="card-body">
-              <div class="icon icon-lg mb-3" style="color:#c83c8e">
-                <!-- server / nexus icon -->
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3" y="3" width="18" height="6" rx="1.5" stroke="#c83c8e" stroke-width="2" />
-                  <rect x="3" y="10" width="18" height="6" rx="1.5" stroke="#c83c8e" stroke-width="2" />
-                  <rect x="3" y="17" width="18" height="4" rx="1.5" stroke="#c83c8e" stroke-width="2" />
-                  <circle cx="7" cy="6" r="1" fill="#c83c8e" />
-                  <circle cx="7" cy="13" r="1" fill="#c83c8e" />
-                </svg>
-              </div>
-              <h5 class="mb-2">Cobuild Nexus</h5>
-              <a href="/solutions/#nexus" class="stretched-link" aria-label="Cobuild Nexus"></a>
-              <p class="mb-0">
-                <strong>Your private AI engine for the mainframe.</strong> Nexus runs securely on-prem, connects to your
-                systems, and lets you choose the
-                LLM—no external API calls required.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 d-flex">
-          <div class="card shadow-sm w-100 position-relative transform transition-transform duration-200 hover:-translate-y-1">
-            <div class="card-body">
-              <div class="icon icon-lg mb-3" style="color:#c83c8e">
-                <!-- apps / components icon -->
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="#c83c8e" stroke-width="2" />
-                  <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="#c83c8e" stroke-width="2" />
-                  <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="#c83c8e" stroke-width="2" />
-                  <path d="M14 14h7v7h-7z" fill="#c83c8e" opacity="0.15" />
-                  <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="#c83c8e" stroke-width="2" />
-                </svg>
-              </div>
-              <h5 class="mb-2">Pre‑built Applications</h5>
-              <a href="/solutions/#apps" class="stretched-link" aria-label="Pre-built Applications"></a>
-              <p class="mb-1">
-                Ready-to-use apps on Nexus that give teams instant value:
-              </p>
-              <ul class="text-sm text-secondary ps-3 mb-0" style="list-style: disc;">
-                <li><strong>Cobuild Insight</strong>: A chat agent that leverages Nexus to answer questions about your
-                  mainframe code and data.</li>
-                <li><strong>Cobuild Code Assist</strong>: Deep code understanding to perform reviews and make
-                  fully-featured changes
-                  directly inside VSCode or terminal emulators, with full mainframe context.
-                </li>
-                <li><strong>Cobuild RCA</strong>: Understand root-causes fast with Cobuild's AI mainframe expertise.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 d-flex">
-          <div class="card shadow-sm w-100 position-relative transform transition-transform duration-200 hover:-translate-y-1">
-            <div class="card-body">
-              <div class="icon icon-lg mb-3" style="color:#c83c8e">
-                <!-- cloud icon -->
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 18h9a4 4 0 0 0 0-8 6 6 0 0 0-11.2 2" stroke="#c83c8e" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M5 18a3 3 0 1 1 .5-5.95" stroke="#c83c8e" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-              </div>
-              <h5 class="mb-2">Cobuild Cloud</h5>
-              <a href="/solutions/#cloud" class="stretched-link" aria-label="Cobuild Cloud"></a>
-              <p class="mb-0">
-                <strong>All the power of Nexus, hosted for you.</strong> Get up and running fast without managing
-                servers, while keeping full control of your data.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-5" id="contact">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8 mx-auto text-center">
-          <div class="ms-3 mb-md-5">
-            <h3 class="text-gradient-brand">Contact us</h3>
-            <p>
-              We'd love to connect and get you started with Cobuild.
+    <section id="cloud" class="pt-6 pb-0">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h2 class="text-gradient text-primary mb-3">Cobuild Cloud</h2>
+            <p class="lead mb-3">All the power of Nexus—hosted for you</p>
+            <p>Cobuild Cloud delivers the full capabilities of Cobuild Nexus as a managed service.</p>
+            <p>Run your AI-powered mainframe environment without setting up servers or managing infrastructure, and
+              start gaining insights in days instead of weeks.</p>
+            <p>Your data stays protected in a private, single-tenant deployment with encryption at rest and in transit.
             </p>
-            <div id="contact-success" class="alert alert-brand d-none" role="alert">
-              Thanks! Your message has been sent. A member of the Cobuild team will reach out to you shortly.
-            </div>
+            <p>Flexible deployment options let you connect securely to on-prem mainframes or hybrid cloud environments,
+              and you can still choose the language model that best fits your policies and workloads.</p>
+          </div>
+          <div class="col-lg-5 mt-4 mt-lg-0 text-center">
+            <img src="../assets/img/cobuild/cloud.png" alt="Cobuild Cloud illustration" class="img-fluid rounded shadow">
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <div class="card card-plain">
-            <form id="contact-form" method="post" action="https://formsubmit.co/7b53b1c969adc3126da80fb8bc59d0b2"
-              autocomplete="off">
-              <!-- FormSubmit configuration -->
-              <input type="hidden" name="_subject" value="Cobuild Systems contact form" />
-              <input type="hidden" name="_next" value="/?contact=success#contact" />
-              <input type="hidden" name="_captcha" value="false" />
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Full Name</label>
-                    <div class="input-group mb-4">
-                      <input id="contact-name" class="form-control" name="name" placeholder="Full Name"
-                        aria-label="Full Name" type="text" required>
-                    </div>
-                    <div class="invalid-feedback"></div>
-                  </div>
-                  <div class="col-md-6 ps-md-2">
-                    <label>Email</label>
-                    <div class="input-group">
-                      <input id="contact-email" type="email" name="email" class="form-control"
-                        placeholder="hello@cobuildsystems.com" required>
-                    </div>
-                    <div class="invalid-feedback"></div>
-                  </div>
-                </div>
-                <div class="form-group mb-4 mt-md-0 mt-4">
-                  <label>How can we help you?</label>
-                  <textarea id="contact-message" name="message" class="form-control" rows="6"
-                    placeholder="Tell us a bit about your goals and current setup" required></textarea>
-                  <div class="invalid-feedback"></div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12 text-center">
-                    <button type="submit" class="btn bg-gradient-brand mt-4">Send Message</button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
+
+  
 
   <script>
     // Navbar Solutions dropdown toggle and close-on-outside
@@ -664,28 +434,23 @@
       const menu = document.getElementById('nav-solutions-menu');
       const caret = document.getElementById('nav-solutions-caret');
       if (!btn || !menu) return;
-
       function closeMenu() {
         if (!menu.classList.contains('hidden')) menu.classList.add('hidden');
         btn.setAttribute('aria-expanded', 'false');
         if (caret) caret.classList.remove('rotate-180');
       }
-
       function toggleMenu(e) {
         e.preventDefault();
         const isOpen = !menu.classList.contains('hidden');
-        if (isOpen) {
-          closeMenu();
-        } else {
+        if (isOpen) closeMenu();
+        else {
           menu.classList.remove('hidden');
           btn.setAttribute('aria-expanded', 'true');
           if (caret) caret.classList.add('rotate-180');
         }
       }
-
       btn.addEventListener('click', toggleMenu);
       btn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') toggleMenu(e); });
-
       document.addEventListener('click', (e) => {
         if (!menu || menu.classList.contains('hidden')) return;
         const t = e.target;
@@ -748,204 +513,9 @@
     })();
   </script>
 
-  <!-- Core from creative-tim -->
-  <script src="./assets/js/core/popper.min.js"></script>
-  <script src="./assets/js/core/bootstrap.min.js"></script>
-
-  <!-- Theme JS from creative-tim (open-source) -->
-  <script src="./assets/js/soft-design-system.min.js" type="text/javascript"></script>
-  <script>
-    // Scrollspy: underline section at top of viewport; lock to clicked link until user scrolls
-    (function () {
-      const allNavLinks = Array.from(document.querySelectorAll('nav a[href^="#"]'));
-      const items = allNavLinks.map(a => ({ id: a.getAttribute('href').slice(1), link: a })).filter(x => x.id);
-      const sections = items.map(x => ({ ...x, el: document.getElementById(x.id) })).filter(x => x.el);
-      if (!sections.length) return;
-
-      const nav = document.querySelector('nav');
-      const navOffset = () => (nav ? nav.offsetHeight : 60) + 8;
-
-      // Disable persistent underline; keep hover-only styling
-      function setActive(id) {
-        allNavLinks.forEach(a => a.classList.replace('border-blue-500', 'border-transparent'));
-      }
-
-      function computeBounds() {
-        return sections.map(x => {
-          const r = x.el.getBoundingClientRect();
-          const top = r.top + window.scrollY;
-          const bottom = top + r.height;
-          return { id: x.id, top, bottom };
-        });
-      }
-
-      let bounds = computeBounds();
-      let lockedId = null; // set to clicked link id until user scrolls
-
-      function pickSectionAtTop() {
-        const y = window.scrollY + navOffset(); // line just below the sticky nav
-        let hit = bounds.find(b => y >= b.top && y < b.bottom);
-        if (!hit) {
-          const above = bounds.filter(b => b.top <= y).sort((a, b) => a.top - b.top);
-          hit = above.length ? above[above.length - 1] : bounds[0];
-        }
-        return hit.id;
-      }
-
-      function onScroll() {
-        if (lockedId) return; // keep clicked item highlighted until user-initiated scroll unlocks
-        setActive(pickSectionAtTop());
-      }
-
-      function unlock() {
-        if (!lockedId) return;
-        lockedId = null;
-        setActive(pickSectionAtTop());
-      }
-
-      // Recompute on resize/load
-      window.addEventListener('resize', () => { bounds = computeBounds(); onScroll(); });
-      window.addEventListener('load', () => { bounds = computeBounds(); onScroll(); });
-
-      // Scroll handling
-      window.addEventListener('scroll', onScroll, { passive: true });
-
-      // Unlock on user scroll intents
-      ['wheel', 'touchmove', 'keydown'].forEach(evt => window.addEventListener(evt, unlock, { passive: true }));
-
-      // On nav clicks, clear any underline (hover handles highlight)
-      sections.forEach(x => x.link.addEventListener('click', () => { lockedId = x.id; setActive(x.id); }));
-
-      // Initial state
-      setActive(pickSectionAtTop());
-    })();
-  </script>
-  <script>
-    // Show contact success banner when redirected back from FormSubmit
-    (function () {
-      try {
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('contact') === 'success') {
-          const el = document.getElementById('contact-success');
-          if (el) el.classList.remove('d-none');
-          params.delete('contact');
-          const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '') + window.location.hash;
-          window.history.replaceState({}, '', newUrl || '/#contact');
-        }
-      } catch (e) { /* no-op */ }
-    })();
-  </script>
-  <script>
-    // Client-side validation for contact form
-    (function () {
-      const form = document.getElementById('contact-form');
-      if (!form) return;
-      const nameEl = document.getElementById('contact-name');
-      const emailEl = document.getElementById('contact-email');
-      const msgEl = document.getElementById('contact-message');
-
-      function getFeedbackEl(field) {
-        const ig = field.closest('.input-group');
-        const candidate = ig ? ig.nextElementSibling : field.nextElementSibling;
-        return candidate && candidate.classList && candidate.classList.contains('invalid-feedback') ? candidate : null;
-      }
-
-      function showError(field, message) {
-        const fb = getFeedbackEl(field);
-        if (fb) { fb.textContent = message; fb.classList.add('d-block'); }
-        field.classList.add('is-invalid');
-        field.setAttribute('aria-invalid', 'true');
-      }
-
-      function clearError(field) {
-        const fb = getFeedbackEl(field);
-        if (fb) fb.classList.remove('d-block');
-        field.classList.remove('is-invalid');
-        field.removeAttribute('aria-invalid');
-      }
-
-      function validateEmail(value) {
-        const v = (value || '').trim();
-        if (!v) return false;
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-      }
-
-      form.addEventListener('submit', async function (e) {
-        let ok = true;
-
-        if (!nameEl.value.trim()) {
-          showError(nameEl, 'Please enter your full name.');
-          ok = false;
-        } else {
-          clearError(nameEl);
-        }
-
-        if (!validateEmail(emailEl.value)) {
-          showError(emailEl, 'Please enter a valid email address.');
-          ok = false;
-        } else {
-          clearError(emailEl);
-        }
-
-        if (!msgEl.value.trim()) {
-          showError(msgEl, 'Please enter a message.');
-          ok = false;
-        } else {
-          clearError(msgEl);
-        }
-
-        e.preventDefault();
-        e.stopPropagation();
-        if (!ok) {
-          const first = document.querySelector('#contact .is-invalid');
-          if (first) first.focus();
-          return;
-        }
-
-        // Try AJAX submit first to avoid cross-origin navigation
-        const payload = {
-          name: nameEl.value.trim(),
-          email: emailEl.value.trim(),
-          message: msgEl.value.trim(),
-          _subject: 'Cobuild Systems contact form'
-        };
-        const endpoint = 'https://formsubmit.co/ajax/7b53b1c969adc3126da80fb8bc59d0b2';
-        try {
-          const res = await fetch(endpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(payload)
-          });
-          if (res.ok) {
-            const banner = document.getElementById('contact-success');
-            if (banner) banner.classList.remove('d-none');
-            form.reset();
-            [nameEl, emailEl, msgEl].forEach(clearError);
-            return;
-          }
-        } catch (err) {
-          // fall through to native submit
-        }
-
-        // Fallback to native form submission (will redirect)
-        form.submit();
-      });
-
-      [nameEl, emailEl, msgEl].forEach((el) => {
-        if (!el) return;
-        el.addEventListener('input', () => clearError(el));
-        el.addEventListener('blur', () => {
-          // Optional: validate on blur for quicker feedback
-          if (el === emailEl && el.value && !validateEmail(el.value)) {
-            showError(emailEl, 'Please enter a valid email address.');
-          }
-          if (el === nameEl && !el.value.trim()) showError(nameEl, 'Please enter your full name.');
-          if (el === msgEl && !el.value.trim()) showError(msgEl, 'Please enter a message.');
-        });
-      });
-    })();
-  </script>
-
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/soft-design-system.min.js" type="text/javascript"></script>
   <script>
     // Enable local file testing: rewrite absolute root links when opened via file://
     (function () {
@@ -955,7 +525,7 @@
         var href = a.getAttribute('href');
         if (!href || href.startsWith('//') || href.startsWith('/assets/') || href.startsWith('/dist/')) return;
         if (href.startsWith('/#')) {
-          var hash = href.slice(1); // keep leading '#'
+          var hash = href.slice(1);
           a.setAttribute('href', (isSolutions ? '../' : '') + 'index.html' + hash);
         } else if (href === '/solutions/' || href.startsWith('/solutions/')) {
           var hashIndex = href.indexOf('#');
@@ -965,8 +535,7 @@
       });
     })();
   </script>
-
-  <footer class="mt-auto bg-white border-t border-slate-200" role="contentinfo">
+  <footer class="mt-auto bg-white" role="contentinfo">
     <div class="mx-auto max-w-7xl px-4 py-1 text-center text-xs leading-tight text-slate-500">
       <small>© Cobuild Systems</small>
     </div>
