@@ -23,7 +23,7 @@
     /* Ensure anchor jumps account for sticky nav height */
     header[id],
     section[id] {
-      scroll-margin-top: 80px;
+      scroll-margin-top: 120px;
     }
     /* Brand accents for Cobuild (#c83c8e) */
     .text-gradient-brand {
@@ -52,20 +52,23 @@
 
 <body class="min-h-screen flex flex-col bg-slate-50">
   <nav class="bg-white shadow dark:bg-gray-800 sticky top-0 z-50">
-    <div
-      class="mx-auto max-w-7xl flex items-center justify-center py-4 px-4 text-gray-600 capitalize dark:text-gray-300">
-      <a href="#home"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">home</a>
+    <div class="mx-auto max-w-7xl flex items-center justify-between py-2 px-4 text-gray-600 capitalize dark:text-gray-300">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="./assets/img/logos/cobuild-systems-logo-large.svg" alt="Cobuild Systems" class="h-20 md:h-24 w-auto" />
+      </a>
+      <div class="flex items-center">
+        <a href="#home"
+          class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">home</a>
 
-      <a href="#features"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">features</a>
+        <a href="#features"
+          class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">features</a>
 
-      <a href="#solutions"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">solutions</a>
+        <a href="#solutions"
+          class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">solutions</a>
 
-      <a href="#contact"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">contact</a>
-
+        <a href="#contact"
+          class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">contact</a>
+      </div>
     </div>
   </nav>
   <header id="home">
@@ -406,10 +409,9 @@
       const nav = document.querySelector('nav');
       const navOffset = () => (nav ? nav.offsetHeight : 60) + 8;
 
+      // Disable persistent underline; keep hover-only styling
       function setActive(id) {
         allNavLinks.forEach(a => a.classList.replace('border-blue-500', 'border-transparent'));
-        const hit = sections.find(x => x.id === id);
-        if (hit) hit.link.classList.replace('border-transparent', 'border-blue-500');
       }
 
       function computeBounds() {
@@ -455,7 +457,7 @@
       // Unlock on user scroll intents
       ['wheel', 'touchmove', 'keydown'].forEach(evt => window.addEventListener(evt, unlock, { passive: true }));
 
-      // Immediate lock + highlight on nav clicks
+      // On nav clicks, clear any underline (hover handles highlight)
       sections.forEach(x => x.link.addEventListener('click', () => { lockedId = x.id; setActive(x.id); }));
 
       // Initial state
