@@ -42,7 +42,8 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p build
-          cp -r index.html dist build/
+          # Copy all top-level HTML pages and the compiled CSS dir
+          cp -r *.html dist build/
           # Keep dist/ in place so the CSS link works:
           #   <link rel="stylesheet" href="./dist/output.css" />
           # assets/ is already added from node_modules in the previous step
