@@ -53,6 +53,16 @@
       border: 1px solid rgba(200, 60, 142, 0.3);
       color: #7c245a;
     }
+
+    /* Mobile: show a very light hero background image */
+    @media (max-width: 767.98px) {
+      .hero-mobile-bg {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('./assets/img/curved-images/curved11.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
   </style>
 </head>
 
@@ -62,7 +72,8 @@
       class="mx-auto max-w-7xl flex items-center justify-between py-2 px-4 text-gray-600 capitalize dark:text-gray-300">
       <a href="#home" class="flex items-center gap-3">
         <span class="block md:hidden">
-          <svg class="h-20 w-auto" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          <img src="./assets/img/logos/cobuild-systems-logo-small.svg" alt="Cobuild Systems" class="h-10 w-auto" />
+          <svg class="h-20 w-auto hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             zoomAndPan="magnify" viewBox="0 0 375 374.999991" preserveAspectRatio="xMidYMid meet" version="1.0">
             <defs>
               <filter x="0%" y="0%" width="100%" height="100%" id="241742de24">
@@ -253,7 +264,16 @@
           </svg>
         </span>
       </a>
-      <div class="flex items-center">
+      <!-- Mobile hamburger -->
+      <button id="nav-toggle" aria-label="Toggle navigation" aria-controls="mobile-menu" aria-expanded="false"
+        class="md:hidden inline-flex items-center justify-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <svg viewBox="0 0 24 24" aria-hidden="true" style="width:24px;height:24px;color:#c83c8e">
+          <path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z" style="fill:#c83c8e !important" />
+        </svg>
+      </button>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center">
         <a href="#home"
           class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">home</a>
 
@@ -289,8 +309,25 @@
       </div>
     </div>
   </nav>
+
+  <!-- Mobile nav panel -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800 shadow border-t border-gray-200 dark:border-gray-700">
+    <div class="px-4 py-3 space-y-2 text-gray-700 dark:text-gray-200">
+      <a href="#home" class="block py-1 hover:text-gray-900 dark:hover:text-white">Home</a>
+      <a href="#features" class="block py-1 hover:text-gray-900 dark:hover:text-white">Features</a>
+      <div class="pt-1">
+        <a href="#solutions" class="block py-1 hover:text-gray-900 dark:hover:text-white">Solutions</a>
+        <div class="ml-4 mt-1 space-y-1 text-sm">
+          <a href="solutions.html#nexus" class="block hover:text-gray-900 dark:hover:text-white">Cobuild Nexus</a>
+          <a href="solutions.html#apps" class="block hover:text-gray-900 dark:hover:text-white">Pre-built Applications</a>
+          <a href="solutions.html#cloud" class="block hover:text-gray-900 dark:hover:text-white">Cobuild Cloud</a>
+        </div>
+      </div>
+      <a href="#contact" class="block py-1 hover:text-gray-900 dark:hover:text-white">Contact</a>
+    </div>
+  </div>
   <header id="home">
-    <div class="page-header min-vh-100">
+    <div class="page-header min-vh-100 hero-mobile-bg">
       <div class="oblique position-absolute top-0 h-100 d-md-block d-none">
         <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6"
           style="background-image:url(./assets/img/curved-images/curved11.jpg)"></div>
@@ -651,6 +688,43 @@
         if (t instanceof Element && !menu.contains(t) && !btn.contains(t)) closeMenu();
       });
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    })();
+  </script>
+  <script>
+    // Mobile hamburger toggle with outside-click close
+    (function () {
+      const btn = document.getElementById('nav-toggle');
+      const panel = document.getElementById('mobile-menu');
+      if (!btn || !panel) return;
+
+      const close = () => {
+        if (!panel.classList.contains('hidden')) panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      };
+
+      const toggle = (e) => {
+        e.preventDefault();
+        const open = panel.classList.contains('hidden');
+        if (open) {
+          panel.classList.remove('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          close();
+        }
+      };
+
+      btn.addEventListener('click', toggle);
+      btn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') toggle(e); });
+
+      document.addEventListener('click', (e) => {
+        if (panel.classList.contains('hidden')) return;
+        const t = e.target;
+        if (t instanceof Element && !panel.contains(t) && !btn.contains(t)) close();
+      });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+      // Close menu when a link is clicked
+      panel.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
     })();
   </script>
 
