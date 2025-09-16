@@ -272,7 +272,8 @@
 
   <header id="top" class="bg-white dark:bg-gray-900 position-relative overflow-hidden">
     <div aria-hidden="true" class="position-absolute top-0 start-0 w-100 h-100"
-      style="background-image:url('./assets/img/curved-images/curved11.jpg');background-size:cover;background-position:center;opacity:0.2;"></div>
+      style="background-image:url('./assets/img/curved-images/curved11.jpg');background-size:cover;background-position:center;opacity:0.2;">
+    </div>
     <div class="container py-6 position-relative z-index-1">
       <div class="row align-items-center">
         <div class="col-lg-10 mx-auto text-center">
@@ -286,16 +287,18 @@
   <main class="flex-1">
     <section id="nexus" class="py-6">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
             <h2 class="text-gradient text-primary mb-3">Cobuild Nexus</h2>
             <p class="lead mb-3">Your private AI engine for the mainframe</p>
-            <p>Cobuild Nexus is a secure server that connects directly to your mainframe and brings AI-powered
-              understanding to decades of code.</p>
-            <p>It runs entirely in your environment—on-prem or private cloud—so your data never leaves your control.</p>
-            <p>With customizable language-model options and full mainframe context, Nexus makes it easy to search,
-              analyze, and answer questions about your entire codebase, all without installing software on the mainframe
-              itself.</p>
+            <p>Cobuild Nexus is a secure server that connects to your mainframe and brings AI-powered understanding to decades of code.</p>
+            <p>It runs entirely in your environment—on-prem or private cloud—so your data stays under your control.</p>
+            <p>Teams can <strong>extend Nexus through a REST API</strong>, building their own custom clients and integrations, or start right away with the <a href="#apps" class="text-primary">pre‑built Cobuild applications</a> (Insight, Code Assist, RCA) for instant value.</p>
+            <p>Nexus supports <strong>flexible LLM deployment</strong>: you can select and run models based on the compute resources available in your on‑prem environment, or <strong>connect to external LLM providers via API</strong> if you prefer to leverage cloud‑hosted models.</p>
+            <p>With customizable language models and full mainframe context, Nexus makes it easy to search, analyze, and answer questions about your entire codebase—without installing software on the mainframe itself.</p>
+          </div>
+          <div class="col-lg-5 mt-4 mt-lg-0">
+            <img src="./assets/img/cobuild/nexus.png" alt="Cobuild Nexus illustration" class="img-fluid rounded shadow">
           </div>
         </div>
       </div>
@@ -310,9 +313,18 @@
           </div>
         </div>
 
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4 d-flex">
-            <div class="card shadow-sm w-100 h-100">
+        <!-- Overview image moved below cards and size constrained -->
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Top-left: overview image -->
+          <div class="col-md-6 d-flex justify-content-center align-items-start">
+            <img src="./assets/img/cobuild/prebuilt-apps.png" alt="Cobuild pre‑built applications overview"
+              class="img-fluid d-block" style="max-width: 520px; width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(0,0,0,0.08); box-shadow: none;">
+          </div>
+
+          <!-- Top-right: Insight card -->
+          <div class="col-md-6 d-flex">
+            <div class="card shadow-sm w-100">
               <div class="card-body d-flex flex-column">
                 <h5 class="mb-1">Cobuild Insight</h5>
                 <p class="text-secondary mb-3">Ask questions. Get answers.</p>
@@ -325,8 +337,9 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 d-flex">
-            <div class="card shadow-sm w-100 h-100">
+          <!-- Bottom-left: Code Assist card -->
+          <div class="col-md-6 d-flex">
+            <div class="card shadow-sm w-100">
               <div class="card-body d-flex flex-column">
                 <h5 class="mb-1">Cobuild Code Assist</h5>
                 <p class="text-secondary mb-3">Deep code understanding inside your IDE.</p>
@@ -339,8 +352,9 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 d-flex">
-            <div class="card shadow-sm w-100 h-100">
+          <!-- Bottom-right: RCA card -->
+          <div class="col-md-6 d-flex">
+            <div class="card shadow-sm w-100">
               <div class="card-body d-flex flex-column">
                 <h5 class="mb-1">Cobuild RCA (Root Cause Analysis)</h5>
                 <p class="text-secondary mb-3">Find problems fast.</p>
@@ -357,14 +371,20 @@
 
     <section id="cloud" class="py-6">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
             <h2 class="text-gradient text-primary mb-3">Cobuild Cloud</h2>
             <p class="lead mb-3">All the power of Nexus—hosted for you</p>
             <p>Cobuild Cloud delivers the full capabilities of Cobuild Nexus as a managed service.</p>
-            <p>Run your AI-powered mainframe environment without setting up servers or managing infrastructure, and start gaining insights in days instead of weeks.</p>
-            <p>Your data stays protected in a private, single-tenant deployment with encryption at rest and in transit.</p>
-            <p>Flexible deployment options let you connect securely to on-prem mainframes or hybrid cloud environments, and you can still choose the language model that best fits your policies and workloads.</p>
+            <p>Run your AI-powered mainframe environment without setting up servers or managing infrastructure, and
+              start gaining insights in days instead of weeks.</p>
+            <p>Your data stays protected in a private, single-tenant deployment with encryption at rest and in transit.
+            </p>
+            <p>Flexible deployment options let you connect securely to on-prem mainframes or hybrid cloud environments,
+              and you can still choose the language model that best fits your policies and workloads.</p>
+          </div>
+          <div class="col-lg-5 mt-4 mt-lg-0 text-center">
+            <img src="./assets/img/cobuild/cloud.png" alt="Cobuild Cloud illustration" class="img-fluid rounded shadow">
           </div>
         </div>
       </div>
