@@ -27,8 +27,10 @@ dist/
 build/
 
 # Ignore local assets; copied from node_modules at deploy time
-# But keep specific custom files we add
+# Keep our custom CSS and images in the repo
 assets/*
+!assets/css/
+!assets/css/**
 !assets/img/
 !assets/img/**
 
