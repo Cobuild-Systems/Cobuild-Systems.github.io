@@ -36,3 +36,7 @@ body {
 @keyframes blob-float-3 { 0% { transform: translate3d(0,0,0) scale(1);} 50% { transform: translate3d(4vmax,-6vmax,0) scale(1.03);} 100% { transform: translate3d(0,0,0) scale(1);} }
 
 @media (prefers-reduced-motion: reduce) { .ambient-blobs .blob { animation: none; } }
+
+/* Brand tint utilities */
+.bg-brand-tint { background: rgba(200, 60, 142, 0.08) !important; }
+.hover-brand-tint:hover { background: rgba(200, 60, 142, 0.12) !important; }
